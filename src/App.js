@@ -1,44 +1,45 @@
 import React, { useState } from 'react';
 import './App.css';
 
-const imageUrls = [
-  'https://thumbs.dreamstime.com/b/bunch-bananas-6175887.jpg?w=768',
-  'https://thumbs.dreamstime.com/z/full-body-brown-chicken-hen-standing-isolated-white-backgroun-background-use-farm-animals-livestock-theme-49741285.jpg?ct=jpeg',
-  'https://thumbs.dreamstime.com/b/bunch-bananas-6175887.jpg?w=768',
-  'https://thumbs.dreamstime.com/z/full-body-brown-chicken-hen-standing-isolated-white-backgroun-background-use-farm-animals-livestock-theme-49741285.jpg?ct=jpeg',
-  'https://thumbs.dreamstime.com/b/bunch-bananas-6175887.jpg?w=768',
-  'https://thumbs.dreamstime.com/z/full-body-brown-chicken-hen-standing-isolated-white-backgroun-background-use-farm-animals-livestock-theme-49741285.jpg?ct=jpeg',
+import bt21 from './images/bt21.png';
+import ppulbatu from './images/ppulbatu.png';
 
+const imageUrls = [
+    bt21,
+    ppulbatu,
 ];
 
 function getRandomImage() {
-  const index = Math.floor(Math.random() * imageUrls.length);
-  return imageUrls[index];
+    const index = Math.floor(Math.random() * imageUrls.length);
+    return imageUrls[index];
 }
 
 function App() {
-  const [images, setImages] = useState(Array(4).fill().map(getRandomImage));
+    const [images, setImages] = useState(Array(36).fill().map(getRandomImage));
 
-  const handleClick = () => {
-    setImages(images.map(() => getRandomImage()));
-  };
+    const handleClick = () => {
+        setImages(images.map(() => getRandomImage()));
+    };
 
-  return (
+    return (
     <div className="container">
-      <h1> Chicken Banana Game!</h1>
-      <div className="grid">
-        {images.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="Random"
-            className="square"
-            onClick={handleClick}
-          />
-        ))}
-      </div>
+        <div className="content">
+            <h1>Ppulbatu-BT21 Game</h1>
+            <hr className="divider" />
+            <div className="grid">
+                {images.map((img, index) => (
+                    <img
+                    key={index}
+                    src={img}
+                    alt="Random"
+                    className="square"
+                    onClick={handleClick}
+                    />
+                ))}
+            </div>
+        </div>
     </div>
-  );
+    );
 }
 
 export default App;
