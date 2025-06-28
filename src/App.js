@@ -16,29 +16,36 @@ function getRandomImage() {
 
 function App() {
     const [images, setImages] = useState(Array(36).fill().map(getRandomImage));
+    const [isClicked, setIsClicked] = useState(Array(36).fill(false));
 
-    const handleClick = () => {
-        setImages(images.map(() => getRandomImage()));
+    const handleClick = (i) => {
+        const newClicked = [...isClicked];
+        newClicked[i] = true;
+        setIsClicked(newClicked);
     };
 
     return (
-    <div className="container">
-        <div className="content">
-            <h1>Ppulbatu-BT21 Game</h1>
-            <hr className="divider" />
-            <div className="grid">
-                {images.map((img, index) => (
-                    <img
-                    key={index}
-                    src={img}
-                    alt="Random"
-                    className="square"
-                    onClick={handleClick}
-                    />
-                ))}
+        <div className="container">
+            <div className="content">
+                <h1>Ppulbatu-BT21 Game</h1>
+                <hr className="divider" />
+                <div className="grid">
+                    {images.map((img, index) => (
+                        <div
+                        key={index}
+                        className="box"
+                        onClick={() => handleClick(index)}>
+                            {isClicked[index] ? (
+                                <img src={img} alt="Revealed" className="square" 
+                                style={{ transform: 'scale(1.1)', animation: 'shrinkDown 0.3s ease-out forwards' }}/>
+                            ) : (
+                                <div className="square hidden">?</div>
+                            )}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
-    </div>
     );
 }
 
