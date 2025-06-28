@@ -87,8 +87,8 @@ function App() {
             <div className="content">
                 <h1>Ppulbatu-BT21 Game</h1>
                 <div className="players">
-                    <p>Player 1 (BT21) Score: {scores['p1']}</p>
-                    <p>Player 2 (Ppulbatu) Score: {scores['p2']}</p>
+                    <p className={currentPlayer === 'p1' ? 'current' : ''}>Player 1 (BT21) Score: {scores['p1']}</p>
+                    <p className={currentPlayer === 'p2' ? 'current' : ''}>Player 2 (Ppulbatu) Score: {scores['p2']}</p>
                 </div>
 
                 <hr className="divider" />

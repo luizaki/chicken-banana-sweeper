@@ -38,6 +38,26 @@ h1 {
     border-top: 3px dashed #3f8885;
 }
 
+.players {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    color: #363636;
+}
+.players p.current {
+    color: #3f8885;
+    font-weight: bold;
+}
+
+.gameover-msg {
+    text-align: center;
+    color: #363636;
+    font-size: 1.2rem;
+    font-weight: bold;;
+    margin-bottom: 1rem;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
