@@ -32,13 +32,6 @@ function App() {
 
         const correct = (isP1 && isBt21) || (!isP1 && !isBt21);
 
-        console.log("== Debug Click ==");
-        console.log("Clicked Index:", i);
-        console.log("imgClicked:", images[i]);
-        console.log("currentPlayer:", currentPlayer);
-        console.log("isBt21:", isBt21);
-        console.log("Correct:", (isP1 && isBt21) || (!isP1 && !isBt21));
-
         if (!correct) {
             setScores(prevScore => ({
                 ...prevScore,
