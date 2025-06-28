@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import bt21_img from './images/bt21.png';
+import bt21_img from './images/bt21b.png';
 import ppulbatu_img from './images/ppulbatu.png';
 
 function generateBoard() {
