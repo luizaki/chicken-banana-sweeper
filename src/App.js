@@ -1,27 +1,33 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import bt21 from './images/bt21.png';
-import ppulbatu from './images/ppulbatu.png';
+import bt21_img from './images/bt21.png';
+import ppulbatu_img from './images/ppulbatu.png';
 
-const imageUrls = [
-    bt21,
-    ppulbatu,
-];
+function generateBoard() {
+    const imgList = [
+        ...Array(18).fill(bt21_img),
+        ...Array(18).fill(ppulbatu_img),
+    ];
 
-function getRandomImage() {
-    const index = Math.floor(Math.random() * imageUrls.length);
-    return imageUrls[index];
+    const shuffledImages = imgList.sort(() => Math.random() - 0.5);
+
+    return shuffledImages;
 }
 
 function App() {
-    const [images, setImages] = useState(Array(36).fill().map(getRandomImage));
+    const [images, setImages] = useState(generateBoard());
     const [isClicked, setIsClicked] = useState(Array(36).fill(false));
 
     const handleClick = (i) => {
         const newClicked = [...isClicked];
         newClicked[i] = true;
         setIsClicked(newClicked);
+    };
+
+    const resetGame = () => {
+        setImages(generateBoard());
+        setIsClicked(Array(36).fill(false));
     };
 
     return (
@@ -37,13 +43,15 @@ function App() {
                         onClick={() => handleClick(index)}>
                             {isClicked[index] ? (
                                 <img src={img} alt="Revealed" className="square" 
-                                style={{ transform: 'scale(1.1)', animation: 'shrinkDown 0.3s ease-out forwards' }}/>
+                                style={{ transform: 'scale(1.1)', animation: 'shrinkDown 0.5s ease-out forwards' }}/>
                             ) : (
                                 <div className="square hidden">?</div>
                             )}
                         </div>
                     ))}
                 </div>
+                <hr className="divider" />
+                <button className="reset-button" onClick={resetGame}>Reset Game</button>
             </div>
         </div>
     );
