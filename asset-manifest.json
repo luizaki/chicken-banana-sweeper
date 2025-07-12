@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/chicken-banana-sweeper/static/css/main.5396b73a.css",
-    "main.js": "/chicken-banana-sweeper/static/js/main.228a0be8.js",
+    "main.css": "/chicken-banana-sweeper/static/css/main.6d495a06.css",
+    "main.js": "/chicken-banana-sweeper/static/js/main.8fc3038c.js",
     "static/js/453.bc938eae.chunk.js": "/chicken-banana-sweeper/static/js/453.bc938eae.chunk.js",
     "static/media/bt21b.png": "/chicken-banana-sweeper/static/media/bt21b.e08c30d1382043d61cca.png",
     "static/media/ppulbatu.png": "/chicken-banana-sweeper/static/media/ppulbatu.e18588ea63147935dd20.png",
     "index.html": "/chicken-banana-sweeper/index.html",
-    "main.5396b73a.css.map": "/chicken-banana-sweeper/static/css/main.5396b73a.css.map",
-    "main.228a0be8.js.map": "/chicken-banana-sweeper/static/js/main.228a0be8.js.map",
+    "main.6d495a06.css.map": "/chicken-banana-sweeper/static/css/main.6d495a06.css.map",
+    "main.8fc3038c.js.map": "/chicken-banana-sweeper/static/js/main.8fc3038c.js.map",
     "453.bc938eae.chunk.js.map": "/chicken-banana-sweeper/static/js/453.bc938eae.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5396b73a.css",
-    "static/js/main.228a0be8.js"
+    "static/css/main.6d495a06.css",
+    "static/js/main.8fc3038c.js"
   ]
 }
